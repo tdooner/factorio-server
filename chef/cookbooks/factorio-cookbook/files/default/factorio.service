@@ -1,0 +1,18 @@
+[Unit]
+Description=Factorio Server
+After=network.target
+
+[Service]
+PIDFile=/usr/factorio/server.pid
+Environment="FACTORIO_PATH=/usr/factorio"
+
+Type=forking
+TimeoutStartSec=20
+ExecStart=/opt/factorio-init/factorio start
+TimeoutStopSec=20
+ExecStop=/opt/factorio-init/factorio stop
+RestartSec=20
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
