@@ -32,3 +32,12 @@ end
 execute '/usr/factorio/bin/x64/factorio --create /usr/factorio/saves/my_savegame' do
   creates '/usr/factorio/saves/my_savegame.zip'
 end
+
+# start the server once, so it outputs the default config.ini
+execute 'timeout 5 /usr/factorio/bin/x64/factorio --start-server-load-latest || true' do
+  creates '/usr/factorio/config/config.ini'
+end
+
+service 'factorio' do
+  action [:enable, :start]
+end
