@@ -20,4 +20,4 @@ export AWS_SSH_KEY_PATH="$tmpdir/id_rsa"
 
 chmod 0600 $AWS_SSH_KEY_PATH
 
-kitchen verify
+bundle exec kitchen verify
