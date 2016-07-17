@@ -1,6 +1,14 @@
 ---
+# TRAVIS:
 driver:
-  name: vagrant
+  name: ec2
+  region: us-west-2
+  aws_ssh_key_id: <%= ENV['AWS_SSH_KEY_ID'] %>
+  subnet_id: <%= ENV['AWS_EC2_SUBNET_ID'] %>
+  associate_public_ip: true
+
+transport:
+  ssh_key: <%= ENV['AWS_SSH_KEY_PATH'] %>
 
 provisioner:
   name: chef_solo

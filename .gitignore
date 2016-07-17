@@ -3,3 +3,4 @@ factorio_rsa.pub
 terraform.tfstate*
 .kitchen/
 .kitchen.local.yml
+.librarian/chef/config
