@@ -2,3 +2,5 @@ language: ruby
 cache: bundler
 script:
   - run-tests.sh
+rvm:
+  - 2.2.0
