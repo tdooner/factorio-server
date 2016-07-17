@@ -10,3 +10,10 @@ mv factorio_rsa.pub ~/.ssh
 
 terraform apply
 ```
+
+
+## running tests
+```
+# install vagrant
+bundle install
+```

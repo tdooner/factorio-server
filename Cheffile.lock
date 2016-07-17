@@ -1,0 +1,8 @@
+PATH
+  remote: chef/cookbooks/factorio
+  specs:
+    factorio (0.1.0)
+
+DEPENDENCIES
+  factorio (>= 0)
+
