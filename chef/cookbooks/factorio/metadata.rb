@@ -1,2 +1,2 @@
-name 'factorio-cookbook'
+name 'factorio'
 version '0.1.0'
