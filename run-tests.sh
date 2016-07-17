@@ -6,6 +6,7 @@ trap "rm -rf $tmpdir" EXIT
 
 # remove the key headers and replace them so OpenSSL parses it correctly
 echo $AWS_SSH_PRIVATE_KEY |
+  sed -e 's/"//g' | \
   sed -e 's/-----BEGIN RSA PRIVATE KEY----- //g' | \
   sed -e 's/ -----END RSA PRIVATE KEY-----//g' | \
   sed -n 'i\
@@ -17,7 +18,7 @@ i\
 ' > $tmpdir/id_rsa
 
 export AWS_SSH_KEY_PATH="$tmpdir/id_rsa"
-
 chmod 0600 $AWS_SSH_KEY_PATH
+head -n 1 $AWS_SSH_KEY_PATH
 
 bundle exec kitchen verify
